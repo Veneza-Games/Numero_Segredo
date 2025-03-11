@@ -19,14 +19,25 @@
     </head>
 
     <body>
-        <header>
-            <!-- place navbar here -->
-        </header>
-        <main></main>
-        <footer>
-            <!-- place footer here -->
-        </footer>
-        <!-- Bootstrap JavaScript Libraries -->
+        
+        <div class="container">
+            <div class="container__conteudo">
+                <div class="container__informacoes">
+                    <div class="container__texto">
+                        <h1>Adivinhe o <span class="container__texto-azul">numero secreto</span></h1>
+                        <p class="texto__paragrafo">Escolha um número entre 1 a 10</p>
+                    </div>
+                    <input type="number" min="1" max="10" class="container__input">
+                    <div class="chute container__botoes">
+                        <button onclick="verificarChute()" id="chute" class="container__botao">Chutar</button>
+                        <button onclick="reiniciarJogo()" id="reiniciar" class="container__botao" disabled>Novo jogo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="assets/js/script.js"></script>
+
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
