@@ -62,7 +62,7 @@ function reiniciarJogo() {
     numeroSecreto = gerarNumeroAleatorio();
     limparCampo();
     tentativas = 3;
-    exibirTextoNaTela('h1', 'Adivinhe o <span class="container__texto-azul">numero secreto</span>');
+    exibirTextoNaTela('h1', 'Adivinhe o <span class="container__texto-azul">número secreto</span>');
     exibirTextoNaTela('p', 'Escolha um número entre 1 a 20');
     document.getElementById('reiniciar').setAttribute('disabled', true)
 }
