@@ -4,7 +4,6 @@ let numeroLimite = 20; //Definição do limite máximo para os números aleatór
 let numeroSecreto = gerarNumeroAleatorio(); //Gera o primeiro número secreto ao iniciar o jogo
 let tentativas = 3; //Número máximo de tentativas permitidas para o jogador
 
-
 /**
 * Função para gerar um número aleatório entre 1 e numeroLimite.
 * A função verifica se o número já foi sorteado anteriormente para evitar repetições.
@@ -13,9 +12,9 @@ let tentativas = 3; //Número máximo de tentativas permitidas para o jogador
 * @returns {number} Número aleatório não repetido
 */
 function gerarNumeroAleatorio() {
-     // Gera um número aleatório dentro do limite definido
+    // Gera um número aleatório dentro do limite definido
     let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
-     // Obtém a quantidade de números já sorteados
+    // Obtém a quantidade de números já sorteados
     let quantidadeDeElementosNaLista = listaDeNumerosSorteados.length;
     // Se todos os números já foram sorteados, reinicia a lista
     if (quantidadeDeElementosNaLista == numeroLimite) {
@@ -32,11 +31,12 @@ function gerarNumeroAleatorio() {
         return numeroEscolhido;
     }
 }
+
 /**
  * Função que limpa o campo de entrada do usuário.
  * Após cada tentativa, o campo de entrada deve ser resetado para evitar que o usuário tenha que apagá-lo manualmente.
  */
- function limparCampo() {
+function limparCampo() {
     // Obtém o campo de entrada do usuário
     let chute = document.querySelector('input');
 
@@ -56,7 +56,7 @@ function reiniciarJogo() {
     limparCampo();
 
     // Reseta o número de tentativas
-    tentativas = 1;
+    tentativas = 3;
 
     // Atualiza os textos na tela para iniciar um novo jogo
     exibirTextoNaTela('h1', 'Adivinhe o <span class="container__texto-azul">número secreto</span>');
@@ -64,9 +64,10 @@ function reiniciarJogo() {
 
     // Desativa o botão de reiniciar até que o jogo termine novamente
     document.getElementById('reiniciar').setAttribute('disabled', true);
-} 
+    document.getElementById('chute').removeAttribute('disabled');
+}
 
- /**
+/**
 * Função que exibe um texto na tela dentro do elemento especificado.
 * Além de alterar o conteúdo HTML, a função utiliza a API `responsiveVoice` para leitura do texto em voz alta.
 *
@@ -84,7 +85,7 @@ function exibirTextoNaTela(tag, texto) {
     responsiveVoice.speak(texto, 'Brazilian Portuguese Female', { rate: 1.2 });
 }
 
- /**
+/**
 * Função que verifica se o número digitado pelo jogador é igual ao número secreto.
 * Se o jogador acertar, exibe mensagem de vitória e habilita o botão para reiniciar o jogo.
 * Se errar, informa se o número secreto é maior ou menor e contabiliza as tentativas.
@@ -107,8 +108,8 @@ function verificarChute() {
         document.getElementById('chute').setAttribute('disabled', true);
     }
     // Verifica se o jogador atingiu o número máximo de tentativas
-    else if (tentativas == 2) {
-        exibirTextoNaTela('h1', 'Errou! Número máximo de tentativas é 2');
+    else if (tentativas == 1) {
+        exibirTextoNaTela('h1', 'Errou! Número máximo de tentativas é 3');
         exibirTextoNaTela('p', 'O número secreto era: ' + numeroSecreto);
 
         // Habilita o botão para reiniciar o jogo
@@ -125,8 +126,8 @@ function verificarChute() {
             exibirTextoNaTela('p', 'O número secreto é maior');
         }
 
-        // Incrementa a contagem de tentativas
-        tentativas++;
+        // Decrementa a contagem de tentativas
+        tentativas--;
 
         // Limpa o campo de entrada para o próximo chute
         limparCampo();
