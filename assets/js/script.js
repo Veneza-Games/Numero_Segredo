@@ -1,8 +1,8 @@
 //Variaveis
 let listaDeNumerosSorteados = []; //Lista para armazenar os números já sorteados e evitar repetições
-let numeroLimite = 10; //Definição do limite máximo para os números aleatórios
+let numeroLimite = 20; //Definição do limite máximo para os números aleatórios
 let numeroSecreto = gerarNumeroAleatorio(); //Gera o primeiro número secreto ao iniciar o jogo
-let tentativas = 2; //Número máximo de tentativas permitidas para o jogador
+let tentativas = 3; //Número máximo de tentativas permitidas para o jogador
 
 
 /**
@@ -60,7 +60,7 @@ function reiniciarJogo() {
 
     // Atualiza os textos na tela para iniciar um novo jogo
     exibirTextoNaTela('h1', 'Adivinhe o <span class="container__texto-azul">número secreto</span>');
-    exibirTextoNaTela('p', 'Escolha um número entre 1 a 10');
+    exibirTextoNaTela('p', 'Escolha um número entre 1 a 20');
 
     // Desativa o botão de reiniciar até que o jogo termine novamente
     document.getElementById('reiniciar').setAttribute('disabled', true);
