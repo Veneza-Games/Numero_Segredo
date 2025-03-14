@@ -18,8 +18,8 @@ p {
     margin: 0 auto;
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    box-shadow: 0 30px 20px rgba(0, 0, 0, 0.2);
 }
 
 button {
@@ -40,10 +40,17 @@ button {
 button:hover {
     background-color: #a8e063;
 }
-body, .container {
+body .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 50vh;
     text-align: center;
+}
+body {
+    transform: translateY(50%);
+    display: flex;
+    background: linear-gradient(to right, #00bb9c, #000080);
+    justify-content: center;
+    align-items: center;
 }

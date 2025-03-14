@@ -133,3 +133,6 @@ function verificarChute() {
         limparCampo();
     }
 }
+
+
+
