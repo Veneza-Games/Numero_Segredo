@@ -89,7 +89,7 @@ function exibirTextoNaTela(tag, texto) {
 * Função que verifica se o número digitado pelo jogador é igual ao número secreto.
 * Se o jogador acertar, exibe mensagem de vitória e habilita o botão para reiniciar o jogo.
 * Se errar, informa se o número secreto é maior ou menor e contabiliza as tentativas.
-* O jogador tem no máximo 2 tentativas.
+* O jogador tem no máximo 3 tentativas.
 */
 function verificarChute() {
     // Obtém o valor digitado pelo jogador no input
