@@ -1,12 +1,12 @@
 let listaDeNumerosSorteados = [];
 let numeroLimite = 20;
 let numeroSecreto = gerarNumeroAleatorio();
-let tentativas = 3;
+let tentativas = 1;
 
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', { rate: 1.2 });
+    
 }
 
 function verificarChute() {
@@ -61,8 +61,9 @@ function limparCampo() {
 function reiniciarJogo() {
     numeroSecreto = gerarNumeroAleatorio();
     limparCampo();
-    tentativas = 3;
+    tentativas = 1;
     exibirTextoNaTela('h1', 'Adivinhe o <span class="container__texto-azul">número secreto</span>');
     exibirTextoNaTela('p', 'Escolha um número entre 1 a 20');
     document.getElementById('reiniciar').setAttribute('disabled', true)
+    document.getElementById('chute').removeAttribute('disabled');
 }
